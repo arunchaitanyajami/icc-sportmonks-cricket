@@ -3,6 +3,8 @@
   "description": "SportMonks Cricket API Client for PHP",
   "license": "MIT",
   "type": "library",
+  "minimum-stability": "stable",
+  "prefer-stable" : true,
   "authors": [
     {
       "name": "Arun Chaitanya jami",
