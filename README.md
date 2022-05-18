@@ -43,6 +43,6 @@ use Sportmonks\Cricket\CricketApi;
 
 ...
 
-// Basic API call for all Bookmakers
-$response = CricketApi::fixtures()->getAll();
+// Basic API call for all Fixtures
+$response = CricketApi::fixtures();
 ```
