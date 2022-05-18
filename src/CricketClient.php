@@ -17,7 +17,7 @@ use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
  */
 class CricketClient {
 	private \Symfony\Contracts\HttpClient\HttpClientInterface $client;
-	private array $query = array();
+	protected array $query = array();
 
 	/**
 	 * CricketClient constructor.
