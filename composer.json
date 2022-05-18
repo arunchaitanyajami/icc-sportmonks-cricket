@@ -1,0 +1,22 @@
+{
+  "name": "achaitanyajami/icc-sportmonks-cricket",
+  "description": "SportMonks Cricket API Client for PHP",
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Arun Chaitanya jami",
+      "email": "arun.chaitanya@ntsindia.co.in"
+    }
+  ],
+  "require": {
+    "php": "^7.3 | ^8",
+    "symfony/http-client": "^5.4",
+    "symfony/dotenv": "^5.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "ICC\\Sportmonks\\Cricket\\": "src/"
+    }
+  }
+}
