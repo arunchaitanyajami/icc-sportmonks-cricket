@@ -41,9 +41,12 @@ class Fixture extends CricketClient {
 	 * @return stdClass
 	 * @throws ApiRequestException
 	 */
-	public function getBetweenDates( $from, $to ) {
+	public function getBetweenDates( $from, $to, $args = [] ) {
 		$this->query['filter']['starts_between'] = $from . ',' . $to;
 		$this->query['sort']                     = 'starting_at';
+		if ( ! empty( $args['page'] ) ) {
+			$this->setPage( $args['page'] );
+		}
 
 		return $this->call( "fixtures" );
 	}
