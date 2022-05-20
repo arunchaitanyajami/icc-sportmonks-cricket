@@ -28,6 +28,8 @@ class Fixture extends CricketClient {
 	 * @throws ApiRequestException
 	 */
 	public function getAll( $args = [] ) {
+		$this->query = $args;
+
 		return $this->call("fixtures" );
 	}
 
