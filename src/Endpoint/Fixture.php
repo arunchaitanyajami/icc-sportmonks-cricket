@@ -28,7 +28,9 @@ class Fixture extends CricketClient {
 	 * @throws ApiRequestException
 	 */
 	public function getAll( $args = [] ) {
-		$this->setPage( $args['page'] );
+		if ( ! empty( $args['page'] ) ) {
+			$this->setPage( $args['page'] );
+		}
 
 		return $this->call("fixtures" );
 	}
