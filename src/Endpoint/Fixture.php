@@ -48,6 +48,10 @@ class Fixture extends CricketClient {
 			$this->setPage( $args['page'] );
 		}
 
+		if ( ! empty( $args['include'] ) ) {
+			$this->setIncludes( $args['include'] );
+		}
+
 		return $this->call( "fixtures" );
 	}
 }
