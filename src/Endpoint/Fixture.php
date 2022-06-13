@@ -13,12 +13,16 @@ use stdClass;
 class Fixture extends CricketClient {
 	/**
 	 * @param int $fixtureId
+	 * @param array $args
 	 *
 	 * @return stdClass
 	 * @throws ApiRequestException
 	 */
-	public function getById( int $fixtureId ) {
+	public function getById( int $fixtureId, array $args = [] ) {
 		$url = "fixtures/{$fixtureId}";
+		if ( ! empty( $args['include'] ) ) {
+			$this->setIncludes( $args['include'] );
+		}
 
 		return $this->call( $url );
 	}
