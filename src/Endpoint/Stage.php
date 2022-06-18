@@ -34,7 +34,7 @@ class Stage extends CricketClient {
 			$this->setPage( $args['page'] );
 		}
 
-		return $this->call( "fixtures" );
+		return $this->call( "stages/" );
 	}
 
 	/**
