@@ -10,25 +10,27 @@ use stdClass;
  * Class LiveScore
  * @package ICC\Sportmonks\Cricket\Endpoint
  */
-class LiveScore extends CricketClient
-{
-    /**
-     * @return stdClass
-     * @throws ApiRequestException
-     */
-    public function getAll()
-    {
-        $url = "livescores";
-        return $this->call($url);
-    }
+class LiveScore extends CricketClient {
+	/**
+	 * @return stdClass
+	 * @throws ApiRequestException
+	 */
+	public function getAll( $args = [] ) {
+		$url = "livescores";
+		if ( ! empty( $args['include'] ) ) {
+			$this->setIncludes( $args['include'] );
+		}
 
-    /**
-     * @return stdClass
-     * @throws ApiRequestException
-     */
-    public function getAllInPlay()
-    {
-        $url = "livescores/now";
-        return $this->call($url);
-    }
+		return $this->call( $url );
+	}
+
+	/**
+	 * @return stdClass
+	 * @throws ApiRequestException
+	 */
+	public function getAllInPlay() {
+		$url = "livescores/now";
+
+		return $this->call( $url );
+	}
 }
