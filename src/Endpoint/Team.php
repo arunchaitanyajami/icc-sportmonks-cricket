@@ -14,12 +14,16 @@ use stdClass;
 class Team extends CricketClient implements Endpoint {
 	/**
 	 * @param int $teamId
-	 *
+	 * @param array $args
 	 * @return stdClass
 	 * @throws ApiRequestException
 	 */
-	public function getById( int $teamId ) {
+	public function getById( int $teamId, array $args = [] ) {
 		$url = "teams/{$teamId}";
+
+		if ( ! empty( $args['include'] ) ) {
+			$this->setIncludes( $args['include'] );
+		}
 
 		return $this->call( $url );
 	}
@@ -37,6 +41,10 @@ class Team extends CricketClient implements Endpoint {
 	}
 
 	public function getAll( $args = [] ) {
+		if ( ! empty( $args['include'] ) ) {
+			$this->setIncludes( $args['include'] );
+		}
+		
 		return $this->call( 'teams' );
 	}
 }
